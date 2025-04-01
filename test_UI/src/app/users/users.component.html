@@ -1,0 +1,19 @@
+<div><br><br>
+<button class="myBtn" routerLink="add/company">Add Company</button> &nbsp;&nbsp;
+<button class="myBtn" routerLink="add/user">Add User</button><br><br>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Allocated Companies</th>
+        </tr>
+        <tr *ngFor="let user of userList">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.companies}}</td>
+        </tr>
+    </table>
+</div>
