@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AddUserComponent implements OnInit{
   userForm:any = FormGroup
   companiesArr:any = [];
+
   selectedCompanies:any=[];
   constructor(private crudService:CrudService,public fb: FormBuilder,private router:Router){}
   ngOnInit(): void {
@@ -26,9 +27,9 @@ export class AddUserComponent implements OnInit{
     })
   }
 getCompanies(){
-  this.crudService.getCompanies().subscribe(data=>{
-    this.companiesArr = data;
-  })
+  // this.crudService.getCompanies().subscribe(data=>{
+  //   this.companiesArr = data;
+  // })
 }
 onFormSubmit(){
 console.log(this.userForm.getRawValue());

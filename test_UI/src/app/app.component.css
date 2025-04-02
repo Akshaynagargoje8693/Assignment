@@ -1,0 +1,11 @@
+.align{
+    text-align: center;
+}
+.btnUnSelected{
+    background: whitesmoke;
+    border: revert
+}
+.btnSelected{
+    background: skyblue;
+    border: revert
+}

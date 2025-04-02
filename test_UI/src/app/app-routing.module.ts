@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { AddUserComponent } from './add-user/add-user.component';
+import { LoginComponent } from './login/login.component';
+import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductActionComponent } from './product-action/product-action.component';
+import { CategoryActionComponent } from './category-action/category-action.component';
 
 const routes: Routes = [
-  {path:'', component:UsersComponent},
-  {path:'add/user',component:AddUserComponent},
-  {path:'add/company',component:AddUserComponent}
+  {path:'', component:LoginComponent},
+  {path:'products',component:ProductsComponent},
+  {path:'categories',component:CategoriesComponent},
+  {path:'product/:action',component:ProductActionComponent},
+  {path:'product/:action/:id',component:ProductActionComponent},
+  {path:'category/:action',component:CategoryActionComponent},
+  {path:'category/:action/:id',component:CategoryActionComponent},
 ];
 
 @NgModule({

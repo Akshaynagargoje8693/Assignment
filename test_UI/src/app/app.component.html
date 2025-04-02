@@ -1,1 +1,12 @@
+<div *ngIf="userData"><br><br>
+    <button class="myBtn" [ngClass]="isProduct?'btnSelected':'btnUnSelected'" (click)="isProduct=true;isCatrgorys=false" routerLink="products">Products</button> &nbsp;&nbsp;
+    <button class="myBtn" [ngClass]="isCatrgorys?'btnSelected':'btnUnSelected'" (click)="isProduct=false;isCatrgorys=true" routerLink="categories">Categories</button><br><br>
+    
+    <!-- <div *ngIf="isProduct">
+        <app-products></app-products>
+    </div>
+    <div *ngIf="isCatrgorys">
+        <app-categories></app-categories>
+    </div> -->
+</div>
 <router-outlet></router-outlet>

@@ -16,8 +16,8 @@ export class UsersComponent implements OnInit{
     this.getUsers()  
   }
   getUsers(){
-    this.crudService.getUsers().subscribe(data=>{
-      this.userList = data;
-    })
+    // this.crudService.getUsers().subscribe(data=>{
+    //   this.userList = data;
+    // })
   }
 }

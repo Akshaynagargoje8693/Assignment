@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can ad[d global styles to this file, and also import other style files */
+.align_middle{
+    align-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.btnUnSelected{
+    background: whitesmoke;
+    border: revert
+}
+.btnSelected{
+    background: skyblue;
+    border: revert
+}
