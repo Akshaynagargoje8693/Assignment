@@ -15,8 +15,11 @@ export class LoginComponent {
       this.initForm();
       let userData = localStorage.getItem('user');
       console.log("user",userData)
-      this.crudService.isLoggedIn.next(true);
-      if(userData) this.router.navigate(['products']);
+      if(userData){
+        this.crudService.isLoggedIn.next(true);
+
+        this.router.navigate(['products']);
+        }
   }
 
   initForm(){

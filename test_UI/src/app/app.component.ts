@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     this.crudService.isLoggedIn.subscribe(data=>{
       console.log(data);
       this.userData = data;
+      console.log("userData",this.userData);
     })
   }
 
