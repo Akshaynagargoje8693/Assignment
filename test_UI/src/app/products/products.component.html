@@ -1,0 +1,27 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+    <h2 class="mb-4"> Products</h2>
+</div>
+<div class="col-md-6" >
+    <button class="myBtn" style="float: right; margin-right: 5px;" routerLink="/product/create">create</button> &nbsp;&nbsp;
+</div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4" *ngFor="let product of ProductsList">
+            <div class="card shadow-sm">
+                <img [src]="product.image_url" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="text-primary fw-bold">{{product.price}}</p>
+                    <a href="#" class="btn btn-warning">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
+</div>

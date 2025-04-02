@@ -1,0 +1,61 @@
+<div class="container my-5">
+    <button class="myBtn" [ngClass]="createType == 'Bulk'?'btnSelected':'btnUnSelected'" (click)="createType='Bulk'">Bulk Create</button> &nbsp;&nbsp;
+    <button class="myBtn" [ngClass]="createType=='Single'?'btnSelected':'btnUnSelected'" (click)="createType='Single'">Single Create</button><br><br>
+    <div class="row" *ngIf="createType == 'Bulk'">
+        <div class="col-md-6">
+    <h2 class="mb-4"> Upload file</h2><br>
+    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, .csv , application/vnd.ms-excel" name="bulkupload" id="bulkupload" (change)="onSelectFile1($event)"><br> <br> <br>
+    <button (click)="bulkUploadProducts()"> Submit</button>
+    </div>
+
+</div>
+<ng-container *ngIf="createType == 'Single'">
+<form [formGroup]="productForm" (ngSubmit)="onFormSubmit()">
+    <div class="row" style="margin-top: 20px;;">
+        <div class="col-sm-6 align">Name:</div>
+        <div class="col-sm-6"><input name="name" id="name" formControlName="name">
+        <span *ngIf="productForm.get('name').touched && productForm.get('name').invalid">Please Enter valid Details</span></div>
+    </div><br>
+    <div class="row">
+        <div class="col-sm-6 align" >Image:</div>
+        <div class="col-sm-6"><input type="file" accept="image/png, image/jpeg" name="image" id="image" (change)="onSelectFile($event)">
+            <span *ngIf="productForm.get('image').touched && productForm.get('image').invalid">Please Enter valid Details</span>
+        </div>
+        
+    </div><br>
+    
+    <div class="row">
+        <div class="col-sm-6 align">price:</div>
+        <div class="col-sm-6"><input name="price" id="price" formControlName="price">
+        <span *ngIf="productForm.get('price').touched && productForm.get('price').invalid">Please Enter valid Details</span>
+    </div>
+    </div><br>
+    
+    <div class="row">
+        <div class="col-sm-6 align">Category:</div>
+        <div class="col-sm-6">
+            <select formControlName="category_id">
+                <option value="">Select Category</option>
+                <option *ngFor="let category of CategoriesList" [value]="category.id">
+                  {{ category.name }}
+                </option>
+              </select>
+        <!-- <label name="companies"   *ngFor="let category_id of companiesArr;let i =index ">
+            <input type="checkbox"   name="xyz" id="category_id.id"  (change)="onChangeCheckbox($event,category_id.id)" >
+            {{category_id.name}} &nbsp; &nbsp; 
+        </label> -->
+        </div>
+    </div><br>
+    <div class="align">
+        <button type="submit" class="align" [disabled]="productForm.invalid">Submit</button>
+        &nbsp;
+        <button  class="align" routerLink="/">Back</button>
+    
+    
+    </div>
+    
+    </form>
+
+</ng-container>
+
+    </div>

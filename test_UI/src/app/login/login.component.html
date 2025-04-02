@@ -1,0 +1,22 @@
+<div class="align_middle">
+<form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    <div class="row" style="margin-top: 20px;;">
+        <div class="col-sm-6 align">Email:</div>
+        <div class="col-sm-6"><input name="email" id="email" formControlName="email"></div>
+        <span *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid">Please Enter valid Details</span>
+    </div><br>
+    <div class="row">
+        <div class="col-sm-6 align" >Password:</div>
+        <div class="col-sm-6"><input name="password" type="password" id="password" formControlName="password"></div>
+        <span *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">Please Enter valid Details</span>
+    </div><br>
+    
+    
+    
+ 
+    <div class="align">
+        <button type="submit" class="align" [disabled]="loginForm.invalid">Login</button>
+    </div>
+    
+    </form>
+</div>
